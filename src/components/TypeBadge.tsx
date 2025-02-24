@@ -5,36 +5,33 @@ interface TypeBadgeProps {
 }
 
 const TypeBadge: React.FC<TypeBadgeProps> = ({ type }) => {
+  // Colores inspirados en los tipos oficiales de Pokémon
   const colors: { [key: string]: string } = {
-    fire: "#F08030",
-    water: "#6890F0",
-    grass: "#78C850",
-    electric: "#F8D030",
-    ice: "#98D8D8",
-    fighting: "#C03028",
-    poison: "#A040A0",
-    ground: "#E0C068",
-    flying: "#A890F0",
-    psychic: "#F85888",
-    bug: "#A8B820",
-    rock: "#B8A038",
-    ghost: "#705898",
-    dragon: "#7038F8",
-    dark: "#705848",
-    steel: "#B8B8D0",
-    fairy: "#EE99AC",
+    normal: "bg-gray-400",
+    fire: "bg-red-500",
+    water: "bg-blue-500",
+    electric: "bg-yellow-500",
+    grass: "bg-green-500",
+    ice: "bg-blue-300",
+    fighting: "bg-red-600",
+    poison: "bg-purple-500",
+    ground: "bg-yellow-700",
+    flying: "bg-indigo-500",
+    psychic: "bg-pink-500",
+    bug: "bg-green-600",
+    rock: "bg-gray-600",
+    ghost: "bg-indigo-700",
+    dragon: "bg-purple-700",
+    dark: "bg-gray-800",
+    steel: "bg-gray-500",
+    fairy: "bg-pink-400",
   };
+
+  const backgroundColor = colors[type] || "bg-gray-500";
 
   return (
     <span
-      style={{
-        backgroundColor: colors[type] || "#68A090",
-        padding: "5px 10px",
-        borderRadius: "10px",
-        color: "white",
-        margin: "5px",
-        display: "inline-block",
-      }}
+      className={`px-4 py-2 text-white text-sm font-bold rounded-md border-2 border-black shadow-md ${backgroundColor}`}
     >
       {type.toUpperCase()}
     </span>
